@@ -47,7 +47,7 @@ public class WebController {
             redirectAttributes.addFlashAttribute("successMessage", "File upload successfully");
         }catch (Exception ex){
             redirectAttributes.addFlashAttribute("errorMessage", "File upload failed !");
-            WebController.log.error("File upload failed !", ex);
+            log.error("File upload failed !", ex);
         }
         return "redirect:/upload";
     }

@@ -55,7 +55,7 @@ public class FileServiceImpl implements FileService {
 
             var fileEntity = new FileEntity();
             fileEntity.setFileName(fileName);
-            fileEntity.setOriginalFileFilename(originalFileName);
+            fileEntity.setOriginalFileName(originalFileName);
             fileEntity.setFileType(file.getContentType());
             fileEntity.setFileSize(String.valueOf(file.getSize()));
             fileEntity.setFilePath(targetLocation.toString());

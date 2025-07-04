@@ -23,7 +23,7 @@ public class FileEntity {
     private String fileName;
 
     @Column(nullable = false)
-    private String originalFileFilename;
+    private String originalFileName;
 
     @Column(nullable = false)
     private String fileType;
