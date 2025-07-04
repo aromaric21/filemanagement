@@ -38,7 +38,7 @@ public class WebController {
     }
 
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file")MultipartFile file,
+    public String uploadFile(@RequestParam("file") MultipartFile file,
                              @RequestParam("description") String description,
                              RedirectAttributes redirectAttributes)
     {
@@ -60,14 +60,14 @@ public class WebController {
         try {
             contenTtype = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
         }catch (IOException e){
-            log.error("Could not determine file type", e);
+            log.error("Could not determine file type !", e);
         }
         if (Objects.isNull(contenTtype)){
             contenTtype = "application/octet-stream";
         }
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(contenTtype))
-                .header("Content-Disposition", "attachment; filename=\"" + resource.getFilename() +"\"")
+                .header("Content-Disposition", "attachment; filename=\"" + resource.getFilename() + "\"")
                 .body((Resource) resource);
     }
 }
